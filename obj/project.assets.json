@@ -8140,11 +8140,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Oskars_Projects\\Sneaky\\Sneaky.csproj",
+      "projectUniqueName": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj",
       "projectName": "Sneaky",
-      "projectPath": "C:\\Oskars_Projects\\Sneaky\\Sneaky.csproj",
+      "projectPath": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj",
       "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Oskars_Projects\\Sneaky\\obj\\",
+      "outputPath": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3,20 +3,102 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Sneaky;
 using Sneaky.Classes;
+using Sneaky.Models;
 
 namespace Sneaky.Controllers
 {
     public class UsersController : Controller
     {
         private readonly Context _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public UsersController(Context context)
+        public UsersController(Context context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        private bool IsAdminRole()
+        {
+            return _httpContextAccessor.HttpContext!.Session.GetString("Role") == "Admin";
+        }
+
+        private int? GetCurrentUserIdFromSession()
+        {
+            return _httpContextAccessor.HttpContext!.Session.GetInt32("Id");
+        }
+
+        private bool IsUserLoggedIn()
+        {
+            return !_httpContextAccessor.HttpContext!.Session.GetString("Login").IsNullOrEmpty();
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            if (_httpContextAccessor.HttpContext == null)
+            {
+                base.OnActionExecuting(context);
+                return;
+            }
+
+            var sessionLogin = _httpContextAccessor.HttpContext.Session.GetString("Login");
+            var sessionRole = _httpContextAccessor.HttpContext.Session.GetString("Role");
+            var sessionId = _httpContextAccessor.HttpContext.Session.GetInt32("Id");
+            var sessionPassword = _httpContextAccessor.HttpContext.Session.GetString("Password");
+
+            var isValidSession = !string.IsNullOrEmpty(sessionLogin) &&
+                                 !string.IsNullOrEmpty(sessionRole) &&
+                                 sessionId.HasValue &&
+                                 !string.IsNullOrEmpty(sessionPassword);
+
+            if (isValidSession)
+            {
+                var existingUser = _context.Users.FirstOrDefault(u =>
+                    u.Login == sessionLogin &&
+                    u.Password == sessionPassword &&
+                    u.Id == sessionId);
+
+                if (existingUser != null)
+                {
+                    ViewBag.Id = sessionId;
+                    ViewBag.Login = sessionLogin;
+                    ViewBag.Role = sessionRole;
+                    return;
+                }
+            }
+
+            // Clear session if user not found or incomplete session data
+            _httpContextAccessor.HttpContext.Session.Remove("Id");
+            _httpContextAccessor.HttpContext.Session.Remove("Login");
+            _httpContextAccessor.HttpContext.Session.Remove("Role");
+            _httpContextAccessor.HttpContext.Session.Remove("Password");
+
+            // Set ViewBag to null if session is not valid
+            ViewBag.Id = null;
+            ViewBag.Login = null;
+            ViewBag.Role = null;
+
+            base.OnActionExecuting(context);
+        }
+
+        public IActionResult LogOut()
+        {
+            if (_httpContextAccessor.HttpContext != null)
+            {
+                _httpContextAccessor.HttpContext.Session.Remove("Id");
+                _httpContextAccessor.HttpContext.Session.Remove("Login");
+                _httpContextAccessor.HttpContext.Session.Remove("Role");
+                _httpContextAccessor.HttpContext.Session.Remove("Password");
+                ViewData["Login"] = null;
+                ViewData["Role"] = null;
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Users
@@ -34,6 +116,11 @@ namespace Sneaky.Controllers
             }
 
             var user = await _context.Users
+                .Include(u => u.ComparisonList)
+                    .ThenInclude(cl => cl.ShoesList)
+                        .ThenInclude(s => s.Brand)
+                .Include(u => u.Favourites)
+                    .ThenInclude(s => s.Brand)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
@@ -45,11 +132,84 @@ namespace Sneaky.Controllers
 
         public IActionResult Login()
         {
+            if (!IsUserLoggedIn())
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login([Bind("Id,Login,Password")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var isUserExist = await _context.Users.FirstOrDefaultAsync(
+                    u => u.Login == user.Login &&
+                    u.Password == user.Password);
+
+                if (isUserExist == null)
+                {
+                    var userData = new UserFormViewModel
+                    {
+                        Login = user.Login,
+                        Password = user.Password,
+                    };
+                    ModelState.AddModelError("Login", "Incorrect login or password.");
+                    return View(userData);
+                }
+
+                if (isUserExist != null && _httpContextAccessor.HttpContext != null)
+                {
+                    _httpContextAccessor.HttpContext.Session.SetInt32("Id", isUserExist.Id);
+                    _httpContextAccessor.HttpContext.Session.SetString("Login", isUserExist.Login);
+                    _httpContextAccessor.HttpContext.Session.SetString("Role", isUserExist.Role.ToString());
+                    _httpContextAccessor.HttpContext.Session.SetString("Password", isUserExist.Password);
+                    return RedirectToAction("Index", "Home");
+                }
+            }
             return View();
         }
 
         public IActionResult Register()
         {
+            if (!IsUserLoggedIn())
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register([Bind("Id,Login,Password")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var isUserExist = await _context.Users.FirstOrDefaultAsync(
+                    u => u.Login == user.Login);
+
+                if (isUserExist != null)
+                {
+                    var userData = new UserFormViewModel
+                    {
+                        Login = user.Login,
+                        Password = user.Password,
+                    };
+                    ModelState.AddModelError("Login", "User with this login is already exist.");
+                    return View(userData);
+                }
+
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                _httpContextAccessor.HttpContext!.Session.SetInt32("Id", user.Id);
+                _httpContextAccessor.HttpContext.Session.SetString("Login", user.Login);
+                _httpContextAccessor.HttpContext.Session.SetString("Role", user.Role.ToString());
+                _httpContextAccessor.HttpContext.Session.SetString("Password", user.Password);
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 

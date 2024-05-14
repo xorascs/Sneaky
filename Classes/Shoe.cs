@@ -13,6 +13,11 @@ namespace Sneaky.Classes
         public required string Description { get; set; }
         public List<string> Images { get; set; } = new List<string>();
 
+        [Display(Name = "Comparison List")]
+        public ICollection<Comparison> ComparisonList { get; set; } = new List<Comparison>();
+        [Display(Name = "Favourites")]
+        public ICollection<User> UsersList { get; set; } = new List<User>();
+
         public Brand? Brand { get; set; }
     }
 }

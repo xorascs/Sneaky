@@ -31,12 +31,35 @@ namespace Sneaky.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Role = table.Column<int>(type: "int", nullable: false),
+                    FavouritesId = table.Column<int>(type: "int", nullable: true),
                     Login = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Shoe",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BrandId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Shoe", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Shoe_Brand_BrandId",
+                        column: x => x.BrandId,
+                        principalTable: "Brand",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,25 +75,6 @@ namespace Sneaky.Migrations
                     table.PrimaryKey("PK_Comparison", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Comparison_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Favourites",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Favourites", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Favourites_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
@@ -99,37 +103,51 @@ namespace Sneaky.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Shoe",
+                name: "ShoeUser",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BrandId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ComparisonId = table.Column<int>(type: "int", nullable: true),
-                    FavouritesId = table.Column<int>(type: "int", nullable: true)
+                    FavouritesId = table.Column<int>(type: "int", nullable: false),
+                    UsersListId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Shoe", x => x.Id);
+                    table.PrimaryKey("PK_ShoeUser", x => new { x.FavouritesId, x.UsersListId });
                     table.ForeignKey(
-                        name: "FK_Shoe_Brand_BrandId",
-                        column: x => x.BrandId,
-                        principalTable: "Brand",
+                        name: "FK_ShoeUser_Shoe_FavouritesId",
+                        column: x => x.FavouritesId,
+                        principalTable: "Shoe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Shoe_Comparison_ComparisonId",
-                        column: x => x.ComparisonId,
-                        principalTable: "Comparison",
-                        principalColumn: "Id");
+                        name: "FK_ShoeUser_User_UsersListId",
+                        column: x => x.UsersListId,
+                        principalTable: "User",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ComparisonShoe",
+                columns: table => new
+                {
+                    ComparisonListId = table.Column<int>(type: "int", nullable: false),
+                    ShoesListId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ComparisonShoe", x => new { x.ComparisonListId, x.ShoesListId });
                     table.ForeignKey(
-                        name: "FK_Shoe_Favourites_FavouritesId",
-                        column: x => x.FavouritesId,
-                        principalTable: "Favourites",
-                        principalColumn: "Id");
+                        name: "FK_ComparisonShoe_Comparison_ComparisonListId",
+                        column: x => x.ComparisonListId,
+                        principalTable: "Comparison",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ComparisonShoe_Shoe_ShoesListId",
+                        column: x => x.ShoesListId,
+                        principalTable: "Shoe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -138,9 +156,9 @@ namespace Sneaky.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Favourites_UserId",
-                table: "Favourites",
-                column: "UserId");
+                name: "IX_ComparisonShoe_ShoesListId",
+                table: "ComparisonShoe",
+                column: "ShoesListId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Review_UserId",
@@ -153,36 +171,34 @@ namespace Sneaky.Migrations
                 column: "BrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Shoe_ComparisonId",
-                table: "Shoe",
-                column: "ComparisonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Shoe_FavouritesId",
-                table: "Shoe",
-                column: "FavouritesId");
+                name: "IX_ShoeUser_UsersListId",
+                table: "ShoeUser",
+                column: "UsersListId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "ComparisonShoe");
+
+            migrationBuilder.DropTable(
                 name: "Review");
 
             migrationBuilder.DropTable(
-                name: "Shoe");
-
-            migrationBuilder.DropTable(
-                name: "Brand");
+                name: "ShoeUser");
 
             migrationBuilder.DropTable(
                 name: "Comparison");
 
             migrationBuilder.DropTable(
-                name: "Favourites");
+                name: "Shoe");
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Brand");
         }
     }
 }

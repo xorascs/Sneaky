@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z/AR3HWGuDW4eSLuNzX3vBAGWb8kQlR6L4zyOFebJ38q8ZE8wxh/IPPHZRUvV3Cv4d2+z2vrCdANd5XNm+dbZA==",
+  "dgSpecHash": "DOSqsDVmw4Mdj2RuHhqcmQ8AMoD2JM5NTvX0swm4WF9oCgt7jtF8pMGrn8yKqqkNrHTe/Dv1gL9HMSRmNsBF6w==",
   "success": true,
-  "projectFilePath": "C:\\Oskars_Projects\\Sneaky\\Sneaky.csproj",
+  "projectFilePath": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\owner\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\owner\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

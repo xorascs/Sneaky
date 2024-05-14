@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="~/Sneaky.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="shortcut icon" href="~/icon.png"/>
+
+    <style>
+        .shoe-img {
+            width: 400px;
+            height: 250px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,6 +27,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    @if (ViewBag.Login != null)
+                    {
+                        <div class="card p-2 m-1">@ViewBag.Login</div>
+                    }
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -31,11 +42,29 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Shoes" asp-action="Index">Shoes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Register">Register</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Comparisons" asp-action="Index">Comparisons</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reviews" asp-action="Index">Reviews</a>
+                        </li>
+                        @if (ViewBag.Login == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Register">Register</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogOut">Log out</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

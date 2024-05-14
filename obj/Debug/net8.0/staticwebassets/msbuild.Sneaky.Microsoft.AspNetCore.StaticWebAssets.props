@@ -960,6 +960,70 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\77e671f5-0bda-415e-a6bb-87779a9c5500_Screenshot 2024-04-02 160140.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sneaky</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sneaky</BasePath>
+      <RelativePath>shoesPhotos/77e671f5-0bda-415e-a6bb-87779a9c5500_Screenshot 2024-04-02 160140.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\77e671f5-0bda-415e-a6bb-87779a9c5500_Screenshot 2024-04-02 160140.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\db13b152-425e-490c-8d23-5e2fb4b468c6_Screenshot (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sneaky</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sneaky</BasePath>
+      <RelativePath>shoesPhotos/db13b152-425e-490c-8d23-5e2fb4b468c6_Screenshot (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\db13b152-425e-490c-8d23-5e2fb4b468c6_Screenshot (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\dd0529c5-2cf6-4a7c-8016-ab04a144e449_Screenshot 2024-04-02 160140.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sneaky</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sneaky</BasePath>
+      <RelativePath>shoesPhotos/dd0529c5-2cf6-4a7c-8016-ab04a144e449_Screenshot 2024-04-02 160140.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\dd0529c5-2cf6-4a7c-8016-ab04a144e449_Screenshot 2024-04-02 160140.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\fdb795c4-0338-441f-a0a4-b551c64916ae_Screenshot (1).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Sneaky</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Sneaky</BasePath>
+      <RelativePath>shoesPhotos/fdb795c4-0338-441f-a0a4-b551c64916ae_Screenshot (1).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\shoesPhotos\fdb795c4-0338-441f-a0a4-b551c64916ae_Screenshot (1).png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sneaky.bundle.scp.css))">
       <SourceType>Package</SourceType>
       <SourceId>Sneaky</SourceId>

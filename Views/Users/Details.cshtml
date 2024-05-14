@@ -28,6 +28,55 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Password)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComparisonList)
+        </dt>
+        <dd class = "col-sm-10">
+            @if (Model.ComparisonList != null && Model.ComparisonList.Count > 0)
+            {
+                @foreach (var comparison in Model.ComparisonList)
+                {
+                    <div class="card m-2 p-2">
+                        @foreach (var shoe in comparison.ShoesList)
+                        {
+                            <div class="card p-2 m-2">
+                                @shoe.Brand!.Name @shoe.Name
+                            </div>
+                        }
+                    </div>
+                }
+            }
+            else
+            {
+                <div>No comparisons found.</div>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Favourites)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Favourites != null && Model.Favourites.Count > 0)
+            {
+                <div class="card m-2 p-2">
+                    @foreach (var shoe in Model.Favourites)
+                    {
+                        <div class="card p-2 m-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>@shoe.Brand?.Name @shoe.Name</span>
+                                @if (ViewBag.Id == Model.Id)
+                                {
+                                    <a asp-controller="Shoes" asp-action="RemoveFromFavourites" asp-route-shoeId="@shoe.Id" class="btn btn-danger">Remove</a>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div>No favourites found.</div>
+            }
+        </dd>
     </dl>
 </div>
 <div>

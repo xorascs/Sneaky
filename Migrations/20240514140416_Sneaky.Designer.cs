@@ -12,7 +12,7 @@ using Sneaky;
 namespace Sneaky.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240509115943_Sneaky")]
+    [Migration("20240514140416_Sneaky")]
     partial class Sneaky
     {
         /// <inheritdoc />
@@ -24,6 +24,36 @@ namespace Sneaky.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ComparisonShoe", b =>
+                {
+                    b.Property<int>("ComparisonListId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShoesListId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ComparisonListId", "ShoesListId");
+
+                    b.HasIndex("ShoesListId");
+
+                    b.ToTable("ComparisonShoe");
+                });
+
+            modelBuilder.Entity("ShoeUser", b =>
+                {
+                    b.Property<int>("FavouritesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsersListId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FavouritesId", "UsersListId");
+
+                    b.HasIndex("UsersListId");
+
+                    b.ToTable("ShoeUser");
+                });
 
             modelBuilder.Entity("Sneaky.Classes.Brand", b =>
                 {
@@ -58,24 +88,6 @@ namespace Sneaky.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comparison", (string)null);
-                });
-
-            modelBuilder.Entity("Sneaky.Classes.Favourites", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Favourites", (string)null);
                 });
 
             modelBuilder.Entity("Sneaky.Classes.Review", b =>
@@ -114,15 +126,9 @@ namespace Sneaky.Migrations
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ComparisonId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("FavouritesId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Images")
                         .IsRequired()
@@ -136,10 +142,6 @@ namespace Sneaky.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.HasIndex("ComparisonId");
-
-                    b.HasIndex("FavouritesId");
-
                     b.ToTable("Shoe", (string)null);
                 });
 
@@ -150,6 +152,9 @@ namespace Sneaky.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("FavouritesId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Login")
                         .IsRequired()
@@ -167,21 +172,40 @@ namespace Sneaky.Migrations
                     b.ToTable("User", (string)null);
                 });
 
-            modelBuilder.Entity("Sneaky.Classes.Comparison", b =>
+            modelBuilder.Entity("ComparisonShoe", b =>
                 {
-                    b.HasOne("Sneaky.Classes.User", "User")
+                    b.HasOne("Sneaky.Classes.Comparison", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("ComparisonListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("Sneaky.Classes.Shoe", null)
+                        .WithMany()
+                        .HasForeignKey("ShoesListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Sneaky.Classes.Favourites", b =>
+            modelBuilder.Entity("ShoeUser", b =>
+                {
+                    b.HasOne("Sneaky.Classes.Shoe", null)
+                        .WithMany()
+                        .HasForeignKey("FavouritesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Sneaky.Classes.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Sneaky.Classes.Comparison", b =>
                 {
                     b.HasOne("Sneaky.Classes.User", "User")
-                        .WithMany()
+                        .WithMany("ComparisonList")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -208,25 +232,12 @@ namespace Sneaky.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Sneaky.Classes.Comparison", null)
-                        .WithMany("ComparisonList")
-                        .HasForeignKey("ComparisonId");
-
-                    b.HasOne("Sneaky.Classes.Favourites", null)
-                        .WithMany("Suggests")
-                        .HasForeignKey("FavouritesId");
-
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("Sneaky.Classes.Comparison", b =>
+            modelBuilder.Entity("Sneaky.Classes.User", b =>
                 {
                     b.Navigation("ComparisonList");
-                });
-
-            modelBuilder.Entity("Sneaky.Classes.Favourites", b =>
-                {
-                    b.Navigation("Suggests");
                 });
 #pragma warning restore 612, 618
         }
