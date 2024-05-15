@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Sneaky;
 using Sneaky.Classes;
+using Sneaky.Models;
 
 namespace Sneaky.Controllers
 {
@@ -93,6 +94,129 @@ namespace Sneaky.Controllers
             return View(await context.ToListAsync());
         }
 
+        public async Task<IActionResult> AddCommentToShoe(int? id, string reviewText)
+        {
+            var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.Id == id);
+            if (shoe == null)
+                return NotFound("Shoe not found");
+
+            var userId = GetCurrentUserIdFromSession();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null)
+                return RedirectToAction("Login", "Users");
+
+            if (ModelState.IsValid)
+            {
+                var review = new ShoeReview
+                {
+                    UserId = user.Id,
+                    Comment = reviewText,
+                    CreateCommentTime = DateTime.Now,
+                };
+
+                shoe.Reviews.Add(review);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("Details", "Shoes", new { id = shoe.Id });
+        }
+
+        public async Task<IActionResult> RemoveCommentFromShoe(int? id, int? reviewId, int? userId)
+        {
+            var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.Id == id);
+            if (shoe == null)
+                return NotFound("Shoe not found");
+
+            var review = await _context.ShoeReviews.FirstOrDefaultAsync(r => r.Id == reviewId);
+            if (review == null)
+                return NotFound("Review not found");
+
+            if (userId != GetCurrentUserIdFromSession())
+                return BadRequest("You are not the owner of this message!");
+
+            _context.ShoeReviews.Remove(review);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Details", "Shoes", new { id = shoe.Id });
+        }   
+
+        public async Task<IActionResult> AddToComparison(int? shoeId)
+        {
+            if (!IsUserLoggedIn())
+            {
+                return RedirectToAction("Login", "Users");
+            }
+
+            var userId = GetCurrentUserIdFromSession();
+            if (userId == null)
+            {
+                return Unauthorized();
+            }
+
+            var user = await _context.Users.Include(u => u.Comparison).FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            if (user.Comparison == null)
+            {
+                // Create a new Comparison object for the user if it doesn't exist
+                user.Comparison = new Comparison();
+            }
+
+            var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.Id == shoeId);
+            if (shoe == null)
+            {
+                return NotFound("Shoe not found in comparison");
+            }
+
+            // Ensure that the Shoes property of the Comparison object is initialized
+            if (user.Comparison.Shoes == null)
+            {
+                user.Comparison.Shoes = new List<Shoe>();
+            }
+
+            user.Comparison.Shoes.Add(shoe);
+            await _context.SaveChangesAsync();
+
+            // Redirect to the details action of Users controller with id from ViewBag
+            return RedirectToAction("Details", "Users", new { id = user.Id });
+        }
+
+        public async Task<IActionResult> RemoveFromComparison(int? shoeId)
+        {
+            if (!IsUserLoggedIn())
+            {
+                return RedirectToAction("Login", "Users");
+            }
+
+            var userId = GetCurrentUserIdFromSession();
+            var user = await _context.Users.Include(u => u.Comparison).FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            if (user.Comparison == null)
+            {
+                // The user's comparison has not been initialized
+                return NotFound("Comparison not found");
+            }
+
+            var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.Id == shoeId);
+            if (shoe == null)
+            {
+                return NotFound("Shoe not found in comparison");
+            }
+
+            // Remove the shoe from the comparison
+            user.Comparison.Shoes.Remove(shoe);
+            await _context.SaveChangesAsync();
+
+            // Redirect to the details action of Users controller with id from ViewBag
+            return RedirectToAction("Details", "Users", new { id = user.Id });
+        }
+
         public async Task<IActionResult> AddToFavourites(int? shoeId)
         {
             if (!IsUserLoggedIn())
@@ -106,10 +230,16 @@ namespace Sneaky.Controllers
                 return Unauthorized();
             }
 
-            var user = await _context.Users.Include(u => u.Favourites).FirstOrDefaultAsync(u => u.Id == userId);
+            var user = await _context.Users.Include(u => u.Favourite).FirstOrDefaultAsync(u => u.Id == userId);
             if (user == null)
             {
                 return NotFound();
+            }
+
+            if (user.Favourite == null)
+            {
+                // Create a new Favourite object for the user if it doesn't exist
+                user.Favourite = new Favourite();
             }
 
             var shoe = await _context.Shoes.FirstOrDefaultAsync(s => s.Id == shoeId);
@@ -118,17 +248,24 @@ namespace Sneaky.Controllers
                 return NotFound();
             }
 
-            if (user.Favourites.Any(f => f.Id == shoeId))
+            // Ensure that the Favourite property is loaded before accessing Shoes
+            if (user.Favourite.Shoes == null)
+            {
+                user.Favourite.Shoes = new List<Shoe>();
+            }
+
+            if (user.Favourite.Shoes.Any(f => f.Id == shoeId))
             {
                 return Conflict();
             }
 
-            user.Favourites.Add(shoe);
+            user.Favourite.Shoes.Add(shoe);
             _context.Update(user);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Details", "Users", new { id = user.Id });
         }
+
 
         public async Task<IActionResult> RemoveFromFavourites(int? shoeId)
         {
@@ -143,7 +280,7 @@ namespace Sneaky.Controllers
                 return Unauthorized();
             }
 
-            var user = await _context.Users.Include(u => u.Favourites).FirstOrDefaultAsync(u => u.Id == userId);
+            var user = await _context.Users.Include(u => u.Favourite).FirstOrDefaultAsync(u => u.Id == userId);
             if (user == null)
             {
                 return NotFound();
@@ -155,12 +292,12 @@ namespace Sneaky.Controllers
                 return NotFound();
             }
 
-            if (!user.Favourites.Any(f => f.Id == shoeId))
+            if (!user.Favourite!.Shoes.Any(f => f.Id == shoeId))
             {
                 return Conflict();
             }
 
-            user.Favourites.Remove(shoe);
+            user.Favourite!.Shoes.Remove(shoe);
             _context.Update(user);
             await _context.SaveChangesAsync();
 
@@ -178,10 +315,18 @@ namespace Sneaky.Controllers
             var shoe = await _context.Shoes
                 .Include(s => s.Brand)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (shoe == null)
             {
-                return NotFound();
+                return NotFound("Shoe not found!");
             }
+
+            var reviews = await _context.ShoeReviews
+                .Include(r => r.User)
+                .Where(r => r.Shoes.Contains(shoe))
+                .ToListAsync();
+
+            shoe.Reviews = reviews;
 
             return View(shoe);
         }
@@ -189,6 +334,10 @@ namespace Sneaky.Controllers
         // GET: Shoes/Create
         public IActionResult Create()
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name");
             return View();
         }
@@ -229,6 +378,11 @@ namespace Sneaky.Controllers
         // GET: Shoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -259,20 +413,20 @@ namespace Sneaky.Controllers
             {
                 try
                 {
+                    var origShoe = await _context.Shoes.FirstOrDefaultAsync(c => c.Id == shoe.Id);
+
                     if (Photos != null && Photos.Count > 0)
                     {
-                        // Delete old photos
-                        foreach (var image in shoe.Images)
+                        foreach (var imagePath in origShoe!.Images)
                         {
-                            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "shoesPhotos", image);
-                            if (System.IO.File.Exists(imagePath))
+                            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "shoesPhotos", imagePath);
+                            if (System.IO.File.Exists(filePath))
                             {
-                                System.IO.File.Delete(imagePath);
+                                System.IO.File.Delete(filePath);
                             }
                         }
 
-                        // Clear old photo collection
-                        shoe.Images.Clear();
+                        origShoe.Images.Clear();
 
                         foreach (var file in Photos.Where(f => f != null && f.Length > 0))
                         {
@@ -281,7 +435,7 @@ namespace Sneaky.Controllers
                                 string uniqueFileName = GenerateUniqueFileName(file.FileName);
                                 string filePath = SaveFileToDisk(file, uniqueFileName);
 
-                                shoe.Images.Add(uniqueFileName);
+                                origShoe.Images.Add(uniqueFileName);
                             }
                             catch (Exception ex)
                             {
@@ -289,7 +443,16 @@ namespace Sneaky.Controllers
                         }
                     }
 
-                    _context.Update(shoe);
+                    if (origShoe == null)
+                    {
+                        return NotFound();
+                    }
+
+                    origShoe.BrandId = shoe.BrandId;
+                    origShoe.Name = shoe.Name;
+                    origShoe.Description = shoe.Description;
+
+                    _context.Update(origShoe);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -305,11 +468,8 @@ namespace Sneaky.Controllers
                 }
                 catch (Exception ex)
                 {
-                    // Log or handle the exception appropriately
                 }
-
                 return RedirectToAction(nameof(Index));
-
             }
             ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", shoe.BrandId);
             return View(shoe);
@@ -318,6 +478,11 @@ namespace Sneaky.Controllers
         // GET: Shoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id == null)
             {
                 return NotFound();

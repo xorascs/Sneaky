@@ -89,6 +89,10 @@ namespace Sneaky.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var context = _context.Reviews.Include(r => r.User);
             return View(await context.ToListAsync());
         }
@@ -181,16 +185,17 @@ namespace Sneaky.Controllers
             return View(review);
         }
 
-        // GET: Reviews/Delete/5
+        // GET: Shoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
 
             var review = await _context.Reviews
-                .Include(r => r.User)
+                .Include(s => s.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (review == null)
             {
@@ -221,7 +226,11 @@ namespace Sneaky.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            if (IsAdminRole())
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         private bool ReviewExists(int id)

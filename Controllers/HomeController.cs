@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 using Sneaky.Models;
 using System.Diagnostics;
 
@@ -7,11 +8,13 @@ namespace Sneaky.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly Context _context;
         private readonly ILogger<HomeController> _logger;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
+        public HomeController(Context context, ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
         {
+            _context = context;
             _logger = logger;
             _httpContextAccessor = httpContextAccessor;
         }
@@ -28,8 +31,14 @@ namespace Sneaky.Controllers
             base.OnActionExecuting(context);
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var reviews = await _context.Reviews
+                .Include(r => r.User)
+                .OrderByDescending(r => r.CreateCommentTime)
+                .Take(10)
+                .ToListAsync();
+            ViewData["Reviews"] = reviews;
             return View();
         }
 

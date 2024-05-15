@@ -10,6 +10,12 @@
     <h4>Shoe</h4>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Brand.Name)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -31,13 +37,45 @@
                 <img src="@Url.Content("~/shoesPhotos/" + shoePath)" class="shoe-img card p-1" />
             }
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Brand)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Brand.Name)
-        </dd>
     </dl>
+
+    <div class="card">
+        <div class="card-body">
+            @if (Model.Reviews != null)
+            {
+                foreach (var review in Model.Reviews)
+                {
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <small>@review.User!.Login</small>
+                                    <p>@review.Comment</p>
+                                    <small>@review.CreateCommentTime</small>
+                                </div>
+                                <div class="col-md-1">
+                                    @if (ViewBag.Id == @review.UserId)
+                                    {
+                                        <form asp-action="RemoveCommentFromShoe" asp-controller="Shoes">
+                                            <input type="hidden" name="id" value="@Model.Id" />
+                                            <input type="hidden" name="reviewId" value="@review.Id" />
+                                            <input type="hidden" name="userId" value="@review.UserId" />
+                                            <input type="submit" value="Remove" class="btn btn-danger" />
+                                        </form>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            <form asp-action="AddCommentToShoe" asp-controller="Shoes">
+                <input type="hidden" name="id" value="@Model.Id"/>
+                <textarea name="reviewText"></textarea>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |

@@ -2,7 +2,51 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .container-reviews {
+        max-height: 600px;
+        overflow: auto;
+    }
+</style>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="card p-3">
+    <a asp-action="Create" asp-controller="Reviews" class="btn btn-primary w-25 mb-3 mx-auto">Leave a Comment</a>
+    @if (ViewBag.Reviews != null && ViewBag.Reviews.Count > 0)
+    {
+        <div class="container-reviews">
+            @foreach (var review in ViewBag.Reviews)
+            {
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <small>@review.User!.Login</small>
+                            <p>@review.Comment</p>
+                            <small>@review.CreateCommentTime</small>
+                        </div>
+                        <div class="col-md-1">
+                            @if (ViewBag.Id == @review.UserId)
+                            {
+                                <form asp-action="Delete" asp-controller="Reviews">
+                                    <input type="hidden" name="id" value="@review.Id" />
+                                    <input type="submit" value="Remove" class="btn btn-danger" />
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center mt-2">There are no any reviews!</p>
+    }
 </div>

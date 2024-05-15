@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L6VPudKmIMtKgEHPCBFioktD/FUjiycEScLzSBrqnwg=",
+  "Hash": "lO/wr5vd+xRnGLA3cKJ4jmw7uiUx0mjE3lGWvMiKFzA=",
   "Source": "Sneaky",
   "BasePath": "_content/Sneaky",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Sneaky\\wwwroot",
       "Source": "Sneaky",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "Pattern": "**"
     }
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "C:\\Users\\owner\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Sneaky.styles.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Sneaky.styles.css",
       "SourceId": "Sneaky",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "Sneaky.styles.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Sneaky.styles.css"
+      "OriginalItemSpec": "C:\\Users\\owner\\source\\repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Sneaky.styles.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sneaky.bundle.scp.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sneaky.bundle.scp.css",
       "SourceId": "Sneaky",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "Sneaky.bundle.scp.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sneaky.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\owner\\source\\repos\\Sneaky\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sneaky.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\css\\site.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\icon.png",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\icon.png",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "icon.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\icon.png"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\js\\site.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1233,12 +1233,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\shoesPhotos\\77e671f5-0bda-415e-a6bb-87779a9c5500_Screenshot 2024-04-02 160140.png",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\13545262-229c-4722-ab0a-042711eecb95_Screenshot (1).png",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
-      "RelativePath": "shoesPhotos/77e671f5-0bda-415e-a6bb-87779a9c5500_Screenshot 2024-04-02 160140.png",
+      "RelativePath": "shoesPhotos/13545262-229c-4722-ab0a-042711eecb95_Screenshot (1).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1249,15 +1249,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\shoesPhotos\\77e671f5-0bda-415e-a6bb-87779a9c5500_Screenshot 2024-04-02 160140.png"
+      "OriginalItemSpec": "wwwroot\\shoesPhotos\\13545262-229c-4722-ab0a-042711eecb95_Screenshot (1).png"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\shoesPhotos\\db13b152-425e-490c-8d23-5e2fb4b468c6_Screenshot (1).png",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\2587eb6f-2395-4f93-a661-ed3d38e393c7_Screenshot (1).png",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
-      "RelativePath": "shoesPhotos/db13b152-425e-490c-8d23-5e2fb4b468c6_Screenshot (1).png",
+      "RelativePath": "shoesPhotos/2587eb6f-2395-4f93-a661-ed3d38e393c7_Screenshot (1).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1268,15 +1268,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\shoesPhotos\\db13b152-425e-490c-8d23-5e2fb4b468c6_Screenshot (1).png"
+      "OriginalItemSpec": "wwwroot\\shoesPhotos\\2587eb6f-2395-4f93-a661-ed3d38e393c7_Screenshot (1).png"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\shoesPhotos\\dd0529c5-2cf6-4a7c-8016-ab04a144e449_Screenshot 2024-04-02 160140.png",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\4ed217ae-0fae-4c55-8317-f056928aa260_Screenshot (1).png",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
-      "RelativePath": "shoesPhotos/dd0529c5-2cf6-4a7c-8016-ab04a144e449_Screenshot 2024-04-02 160140.png",
+      "RelativePath": "shoesPhotos/4ed217ae-0fae-4c55-8317-f056928aa260_Screenshot (1).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1287,15 +1287,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\shoesPhotos\\dd0529c5-2cf6-4a7c-8016-ab04a144e449_Screenshot 2024-04-02 160140.png"
+      "OriginalItemSpec": "wwwroot\\shoesPhotos\\4ed217ae-0fae-4c55-8317-f056928aa260_Screenshot (1).png"
     },
     {
-      "Identity": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\shoesPhotos\\fdb795c4-0338-441f-a0a4-b551c64916ae_Screenshot (1).png",
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\6432a33e-d8d8-48f6-83aa-27baa2dc22bb_Screenshot 2024-04-03 144827.png",
       "SourceId": "Sneaky",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
       "BasePath": "_content/Sneaky",
-      "RelativePath": "shoesPhotos/fdb795c4-0338-441f-a0a4-b551c64916ae_Screenshot (1).png",
+      "RelativePath": "shoesPhotos/6432a33e-d8d8-48f6-83aa-27baa2dc22bb_Screenshot 2024-04-03 144827.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,7 +1306,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\shoesPhotos\\fdb795c4-0338-441f-a0a4-b551c64916ae_Screenshot (1).png"
+      "OriginalItemSpec": "wwwroot\\shoesPhotos\\6432a33e-d8d8-48f6-83aa-27baa2dc22bb_Screenshot 2024-04-03 144827.png"
+    },
+    {
+      "Identity": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\ffdc1433-3c3b-4637-a700-5c6fb2994c36_Screenshot 2024-04-03 144827.png",
+      "SourceId": "Sneaky",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\",
+      "BasePath": "_content/Sneaky",
+      "RelativePath": "shoesPhotos/ffdc1433-3c3b-4637-a700-5c6fb2994c36_Screenshot 2024-04-03 144827.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\shoesPhotos\\ffdc1433-3c3b-4637-a700-5c6fb2994c36_Screenshot 2024-04-03 144827.png"
     }
   ]
 }

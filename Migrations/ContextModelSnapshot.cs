@@ -22,34 +22,32 @@ namespace Sneaky.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ComparisonShoe", b =>
+            modelBuilder.Entity("Comparison", b =>
                 {
-                    b.Property<int>("ComparisonListId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ShoesListId")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.HasKey("ComparisonListId", "ShoesListId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("ShoesListId");
-
-                    b.ToTable("ComparisonShoe");
+                    b.ToTable("Comparison", (string)null);
                 });
 
-            modelBuilder.Entity("ShoeUser", b =>
+            modelBuilder.Entity("ShoeShoeReview", b =>
                 {
-                    b.Property<int>("FavouritesId")
+                    b.Property<int>("ReviewsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersListId")
+                    b.Property<int>("ShoesId")
                         .HasColumnType("int");
 
-                    b.HasKey("FavouritesId", "UsersListId");
+                    b.HasKey("ReviewsId", "ShoesId");
 
-                    b.HasIndex("UsersListId");
+                    b.HasIndex("ShoesId");
 
-                    b.ToTable("ShoeUser");
+                    b.ToTable("ShoeShoeReview");
                 });
 
             modelBuilder.Entity("Sneaky.Classes.Brand", b =>
@@ -69,7 +67,7 @@ namespace Sneaky.Migrations
                     b.ToTable("Brand", (string)null);
                 });
 
-            modelBuilder.Entity("Sneaky.Classes.Comparison", b =>
+            modelBuilder.Entity("Sneaky.Classes.Favourite", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -77,14 +75,9 @@ namespace Sneaky.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Comparison", (string)null);
+                    b.ToTable("Favourite", (string)null);
                 });
 
             modelBuilder.Entity("Sneaky.Classes.Review", b =>
@@ -123,9 +116,15 @@ namespace Sneaky.Migrations
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ComparisonId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("FavouriteId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Images")
                         .IsRequired()
@@ -139,7 +138,36 @@ namespace Sneaky.Migrations
 
                     b.HasIndex("BrandId");
 
+                    b.HasIndex("ComparisonId");
+
+                    b.HasIndex("FavouriteId");
+
                     b.ToTable("Shoe", (string)null);
+                });
+
+            modelBuilder.Entity("Sneaky.Classes.ShoeReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateCommentTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ShoeReview", (string)null);
                 });
 
             modelBuilder.Entity("Sneaky.Classes.User", b =>
@@ -150,7 +178,10 @@ namespace Sneaky.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("FavouritesId")
+                    b.Property<int?>("ComparisonId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FavouriteId")
                         .HasColumnType("int");
 
                     b.Property<string>("Login")
@@ -164,50 +195,33 @@ namespace Sneaky.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ShoeId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ComparisonId");
+
+                    b.HasIndex("FavouriteId");
+
+                    b.HasIndex("ShoeId");
 
                     b.ToTable("User", (string)null);
                 });
 
-            modelBuilder.Entity("ComparisonShoe", b =>
+            modelBuilder.Entity("ShoeShoeReview", b =>
                 {
-                    b.HasOne("Sneaky.Classes.Comparison", null)
+                    b.HasOne("Sneaky.Classes.ShoeReview", null)
                         .WithMany()
-                        .HasForeignKey("ComparisonListId")
+                        .HasForeignKey("ReviewsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Sneaky.Classes.Shoe", null)
                         .WithMany()
-                        .HasForeignKey("ShoesListId")
+                        .HasForeignKey("ShoesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ShoeUser", b =>
-                {
-                    b.HasOne("Sneaky.Classes.Shoe", null)
-                        .WithMany()
-                        .HasForeignKey("FavouritesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Sneaky.Classes.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersListId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Sneaky.Classes.Comparison", b =>
-                {
-                    b.HasOne("Sneaky.Classes.User", "User")
-                        .WithMany("ComparisonList")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sneaky.Classes.Review", b =>
@@ -229,12 +243,64 @@ namespace Sneaky.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Comparison", null)
+                        .WithMany("Shoes")
+                        .HasForeignKey("ComparisonId");
+
+                    b.HasOne("Sneaky.Classes.Favourite", null)
+                        .WithMany("Shoes")
+                        .HasForeignKey("FavouriteId");
+
                     b.Navigation("Brand");
+                });
+
+            modelBuilder.Entity("Sneaky.Classes.ShoeReview", b =>
+                {
+                    b.HasOne("Sneaky.Classes.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sneaky.Classes.User", b =>
                 {
-                    b.Navigation("ComparisonList");
+                    b.HasOne("Comparison", "Comparison")
+                        .WithMany("Users")
+                        .HasForeignKey("ComparisonId");
+
+                    b.HasOne("Sneaky.Classes.Favourite", "Favourite")
+                        .WithMany("Users")
+                        .HasForeignKey("FavouriteId");
+
+                    b.HasOne("Sneaky.Classes.Shoe", null)
+                        .WithMany("UsersList")
+                        .HasForeignKey("ShoeId");
+
+                    b.Navigation("Comparison");
+
+                    b.Navigation("Favourite");
+                });
+
+            modelBuilder.Entity("Comparison", b =>
+                {
+                    b.Navigation("Shoes");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Sneaky.Classes.Favourite", b =>
+                {
+                    b.Navigation("Shoes");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Sneaky.Classes.Shoe", b =>
+                {
+                    b.Navigation("UsersList");
                 });
 #pragma warning restore 612, 618
         }

@@ -104,6 +104,10 @@ namespace Sneaky.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View(await _context.Users.ToListAsync());
         }
 
@@ -116,11 +120,12 @@ namespace Sneaky.Controllers
             }
 
             var user = await _context.Users
-                .Include(u => u.ComparisonList)
-                    .ThenInclude(cl => cl.ShoesList)
+                .Include(u => u.Comparison)
+                    .ThenInclude(c => c!.Shoes)
                         .ThenInclude(s => s.Brand)
-                .Include(u => u.Favourites)
-                    .ThenInclude(s => s.Brand)
+                .Include(u => u.Favourite)
+                    .ThenInclude(c => c!.Shoes)
+                        .ThenInclude(s => s.Brand)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
@@ -216,6 +221,10 @@ namespace Sneaky.Controllers
         // GET: Users/Create
         public IActionResult Create()
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -226,8 +235,22 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Role,Login,Password")] User user)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
+                var isUserExist = await _context.Users.FirstOrDefaultAsync(
+                    u => u.Login == user.Login);
+
+                if (isUserExist != null)
+                {
+                    ModelState.AddModelError("Login", "User with this login is already exist.");
+                    return View(user);
+                }
+
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -248,6 +271,12 @@ namespace Sneaky.Controllers
             {
                 return NotFound();
             }
+
+            if (!IsAdminRole() && user.Id != GetCurrentUserIdFromSession())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(user);
         }
 
@@ -267,6 +296,15 @@ namespace Sneaky.Controllers
             {
                 try
                 {
+                    var isUserExist = await _context.Users.FirstOrDefaultAsync(
+                    u => u.Login == user.Login);
+
+                    if (isUserExist != null)
+                    {
+                        ModelState.AddModelError("Login", "User with this login is already exist.");
+                        return View(user);
+                    }
+
                     _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
@@ -299,6 +337,11 @@ namespace Sneaky.Controllers
             if (user == null)
             {
                 return NotFound();
+            }
+
+            if (!IsAdminRole() && user.Id != GetCurrentUserIdFromSession())
+            {
+                return RedirectToAction("Index", "Home");
             }
 
             return View(user);
