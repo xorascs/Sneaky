@@ -89,12 +89,20 @@ namespace Sneaky.Controllers
         // GET: Brands
         public async Task<IActionResult> Index()
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View(await _context.Brands.ToListAsync());
         }
 
         // GET: Brands/Create
         public IActionResult Create()
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -105,6 +113,10 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] Brand brand)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(brand);
@@ -117,6 +129,11 @@ namespace Sneaky.Controllers
         // GET: Brands/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -137,6 +154,11 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Brand brand)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id != brand.Id)
             {
                 return NotFound();
@@ -168,6 +190,11 @@ namespace Sneaky.Controllers
         // GET: Brands/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -188,6 +215,11 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var brand = await _context.Brands.FindAsync(id);
             if (brand != null)
             {

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Sneakers Catalog";
 }
 
 <style>
@@ -9,44 +9,90 @@
     }
 </style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="container">
+    <div class="wrapper p-5 animate__animated animate__zoomIn">
+        <div class="title"><span>Welcome to the Sneakers Catalog <strong>"Sneaky"</strong></span></div>
 
-
-<div class="card p-3">
-    <a asp-action="Create" asp-controller="Reviews" class="btn btn-primary w-25 mb-3 mx-auto">Leave a Comment</a>
-    @if (ViewBag.Reviews != null && ViewBag.Reviews.Count > 0)
-    {
-        <div class="container-reviews">
-            @foreach (var review in ViewBag.Reviews)
-            {
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-11">
-                            <small>@review.User!.Login</small>
-                            <p>@review.Comment</p>
-                            <small>@review.CreateCommentTime</small>
-                        </div>
-                        <div class="col-md-1">
-                            @if (ViewBag.Id == @review.UserId)
-                            {
-                                <form asp-action="Delete" asp-controller="Reviews">
-                                    <input type="hidden" name="id" value="@review.Id" />
-                                    <input type="submit" value="Remove" class="btn btn-danger" />
-                                </form>
-                            }
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="card p-4">
+                                <h2>About Us</h2>
+                                <p>Welcome to the Sneakers Catalog, your ultimate destination for exploring the latest trends and styles in sneakers. We are a team of passionate sneaker enthusiasts dedicated to providing you with the best selection of sneakers from top brands around the world. Whether you're a sneakerhead looking to expand your collection or simply searching for the perfect pair of kicks, we've got you covered.</p>
+                                <p>At Sneakers Catalog, we understand that sneakers are more than just footwear - they're a form of self-expression, a reflection of personal style, and a symbol of cultural identity. That's why we curate our collection with care, offering a diverse range of sneakers to suit every taste and preference.</p>
+                                <p>With our user-friendly interface and comprehensive product listings, you can easily browse through our extensive catalog, discover new releases, and stay updated on the latest arrivals. Whether you're into classic retros, high-performance runners, or limited-edition collaborations, you'll find something to love at Sneakers Catalog.</p>
+                                <p>Join us on our mission to celebrate sneaker culture and elevate your footwear game. Explore our collection today and step up your style with the perfect pair of sneakers.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            }
+            <div class="col-md-6">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="card p-4">
+                                <img src="~/Shoes.jpg" class="card-img-top mb-3" style="object-fit: cover; height: 155px;"/>
+                                <h2>Explore Our Collection</h2>
+                                <p>Ready to discover your next favorite pair of sneakers? Dive into our extensive collection and explore a world of footwear possibilities. From iconic classics to cutting-edge designs, our curated selection features sneakers from leading brands and emerging designers.</p>
+                                <p>Whether you're searching for timeless silhouettes, innovative technologies, or exclusive collaborations, you'll find it all at Sneakers Catalog. Our collection spans a wide range of styles, colors, and sizes, ensuring that there's something for everyone.</p>
+                                <p>Ready to find your perfect pair? Click below to start browsing our collection and embark on a journey of sneaker discovery. With new arrivals added regularly, there's always something fresh and exciting to explore at Sneakers Catalog.</p>
+                                <a asp-action="Index" asp-controller="Shoes" class="btn btn-outline-success">View Shoes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
-    else
-    {
-        <p class="text-center mt-2">There are no any reviews!</p>
-    }
+    </div>
+</div>
+
+
+<div class="container mt-4">
+    <div class="row justify-content-center animate__animated animate__zoomIn">
+        <div class="col-md-12">
+            <div class="card p-4">
+                <h2>Reviews about Website</h2>
+                <a asp-action="Create" asp-controller="Reviews" class="btn btn-outline-success w-100 mb-3">Leave a Comment</a>
+                @if (ViewBag.Reviews != null && ViewBag.Reviews.Count > 0)
+                {
+                    <div class="container-reviews">
+                        @foreach (var review in ViewBag.Reviews)
+                        {
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h4>@review.User!.Login</h4>
+                                            <p>@review.Comment</p>
+                                            <small>@review.CreateCommentTime.ToString("MMM dd, yyyy 'at' h:mm tt")</small>
+                                        </div>
+                                        <div class="col-md-2">
+                                            @if (ViewBag.Id == @review.UserId)
+                                            {
+                                                <form asp-action="Delete" asp-controller="Reviews">
+                                                    <input type="hidden" name="id" value="@review.Id" />
+                                                    <input type="submit" value="Remove" class="btn btn-danger ms-5 mt-4" />
+                                                </form>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="text-center text-muted mt-2">There are no reviews yet!</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

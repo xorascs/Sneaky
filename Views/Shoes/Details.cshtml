@@ -4,80 +4,103 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="container">
+    <div class="wrapper animate__animated animate__fadeInDown" style="z-index: -1;">
+        <div class="title"><span>@Model.Brand!.Name @Model.Name Details</span></div>
+        <div class="row animate__animated animate__zoomIn animate__delay-1s">
+            <div class="col-md-6">
+                <div id="demo" class="carousel slide w-100 p-2" data-bs-ride="carousel">
 
-<div>
-    <h4>Shoe</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Brand)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Brand.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Images)
-        </dt>
-        <dd class = "col-sm-10">
-            @foreach (var shoePath in Model.Images)
-            {
-                <img src="@Url.Content("~/shoesPhotos/" + shoePath)" class="shoe-img card p-1" />
-            }
-        </dd>
-    </dl>
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        @for (int i = 0; i < Model.Images.Count; i++)
+                        {
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="@i" @(i == 0 ? "class=active" : "")></button>
+                        }
+                    </div>
 
-    <div class="card">
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        @foreach (var imagePath in Model.Images)
+                        {
+                            <div class="carousel-item @(Model.Images.IndexOf(imagePath) == 0 ? "active" : "")">
+                                <img src="~/shoesPhotos/@imagePath" alt="Existing Image" class="d-block w-100 img-thumbnail" style="height: 500px; width: 100%; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal" />
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <dl class="row px-5 pt-5">
+                    <dt class="col-sm-4">Brand:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Brand!.Name)</dd>
+                    <dt class="col-sm-4">Name:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+                    <dt class="col-sm-4">Description:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+                </dl>
+                <form>
+                    <div class="row button justify-content-between">
+                        @if (ViewBag.Role == "Admin")
+                        {
+                            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary w-25 pt-2">Edit</a>
+                        }
+                        <a asp-action="Index" class="btn outline-button w-25">Back to List</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 mt-4 animate__animated animate__fadeInUp">
         <div class="card-body">
-            @if (Model.Reviews != null)
+            <h4>Reviews</h4>
+            <hr />
+            @if (Model.Reviews != null && Model.Reviews.Any())
             {
                 foreach (var review in Model.Reviews)
                 {
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <small>@review.User!.Login</small>
-                                    <p>@review.Comment</p>
-                                    <small>@review.CreateCommentTime</small>
-                                </div>
-                                <div class="col-md-1">
-                                    @if (ViewBag.Id == @review.UserId)
-                                    {
-                                        <form asp-action="RemoveCommentFromShoe" asp-controller="Shoes">
-                                            <input type="hidden" name="id" value="@Model.Id" />
-                                            <input type="hidden" name="reviewId" value="@review.Id" />
-                                            <input type="hidden" name="userId" value="@review.UserId" />
-                                            <input type="submit" value="Remove" class="btn btn-danger" />
-                                        </form>
-                                    }
-                                </div>
+                    <div class="card mb-3 p-4">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <p class="mb-0"><strong>@review.User!.Login</strong></p>
+                                <p>@review.Comment</p>
+                                <small>@review.CreateCommentTime.ToString("MMM dd, yyyy 'at' h:mm tt")</small>
+                            </div>
+                            <div class="col-md-1">
+                                @if (ViewBag.Id == @review.UserId)
+                                {
+                                    <form asp-action="RemoveCommentFromShoe" asp-controller="Shoes">
+                                        <input type="hidden" name="id" value="@Model.Id" />
+                                        <input type="hidden" name="reviewId" value="@review.Id" />
+                                        <input type="hidden" name="userId" value="@review.UserId" />
+                                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                                    </form>
+                                }
                             </div>
                         </div>
                     </div>
                 }
             }
+            else
+            {
+                <p>No reviews yet.</p>
+            }
+
             <form asp-action="AddCommentToShoe" asp-controller="Shoes">
-                <input type="hidden" name="id" value="@Model.Id"/>
-                <textarea name="reviewText"></textarea>
-                <input type="submit" value="Submit" class="btn btn-primary"/>
+                <input type="hidden" name="id" value="@Model.Id" />
+                <textarea name="reviewText" class="form-control mb-3" rows="3" placeholder="Write a review..."></textarea>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
             </form>
         </div>
     </div>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>

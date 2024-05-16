@@ -6,34 +6,36 @@
 
 <div class="container">
     <div class="wrapper animate__animated animate__fadeInUp">
-        <div class="title"><span>Delete User</span></div>
-        <dl class="row px-5 pt-5">
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Role)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Role)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Login)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Login)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Password)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Password)
-            </dd>
-        </dl>
+        <div class="title bg-danger"><span>Delete User</span></div>
+        <div class="animate__animated animate__zoomIn animate__delay-1s">
+            <dl class="row px-5 pt-5">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Role)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Role)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Login)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Login)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+            </dl>
     
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <div class="row button">
-                <input type="submit" value="Delete" class="btn w-25" />
-                <a asp-action="Index" class="btn outline-button w-25">Back to List</a>
-            </div>
-        </form>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="row button">
+                    <input type="submit" value="Delete" class="btn w-25 bg-danger border-danger" />
+                    <a asp-action="Index" class="btn outline-button-danger w-25">Back to List</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

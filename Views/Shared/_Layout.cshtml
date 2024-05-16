@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -34,7 +34,7 @@
 
         main {
             margin-top: 120px;
-            margin-bottom: 80px;
+            margin-bottom: 240px;
         }
 
         footer {
@@ -44,6 +44,27 @@
             text-align: center;
         }
 
+        textarea {
+            resize: none;
+        }
+
+        .btn {
+            border-radius: 25px !important;
+            padding: 0.375rem 1rem;
+        }
+        .btn-outline-success {
+            border: 1px solid #16a085;
+            color: #16a085;
+        }
+        .btn-outline-success:hover {
+            background-color: #16a085;
+            color: white;
+        }
+            
+        .shoe-img {
+            width: 575px;
+            height: 350px;
+        }
 
         ::selection {
             background: rgba(26,188,156,0.3);
@@ -178,7 +199,54 @@
                 background: rgba(22, 188, 156, 0.1);
             }
 
-            .wrapper form .row .outline-button i {
+        .wrapper form .row .outline-button-danger {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+            width: 100px; /* Adjust width as needed */
+            color: #dc3545; /* Danger color */
+            font-size: 16px;
+            border: 1px solid #dc3545; /* Danger color */
+            border-radius: 5px;
+            background: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .wrapper form .row .outline-button-danger:hover {
+                background: rgba(220, 53, 69, 0.1); /* Adjust opacity as needed */
+            }
+
+        .wrapper form .row .outline-button-primary {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+            width: 100px; /* Adjust width as needed */
+            color: #007bff; /* Primary color */
+            font-size: 16px;
+            border: 1px solid #007bff; /* Primary color */
+            border-radius: 5px;
+            background: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .wrapper form .row .outline-button-primary:hover {
+                background: rgba(0, 123, 255, 0.1); /* Adjust opacity as needed */
+            }
+
+
+            .wrapper form .row .outline-button i, .wrapper form .row .outline-button-danger i {
                 margin-right: 5px; /* Adjust margin as needed */
             }
 

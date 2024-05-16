@@ -88,9 +88,27 @@ namespace Sneaky.Controllers
         }
 
         // GET: Shoes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? brand, string? name)
         {
-            var context = _context.Shoes.Include(s => s.Brand);
+            var allBrands = await _context.Brands.ToListAsync();
+            ViewData["Brands"] = allBrands;
+            var context = _context.Shoes.AsQueryable(); // Start with the IQueryable
+
+            // Apply brand filter if specified
+            if (!string.IsNullOrEmpty(brand))
+            {
+                context = context.Where(s => s.Brand!.Name == brand);
+            }
+
+            // Apply name filter if specified
+            if (!string.IsNullOrEmpty(name))
+            {
+                context = context.Where(s => s.Name.Contains(name));
+            }
+
+            // Apply Include after filtering
+            context = context.Include(s => s.Brand);
+
             return View(await context.ToListAsync());
         }
 
@@ -349,6 +367,10 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,BrandId,Name,Description,Images")] Shoe shoe, List<IFormFile> Photos)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (ModelState.IsValid)
             {
                 if (Photos != null && Photos.Count > 0)
@@ -404,6 +426,11 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,BrandId,Name,Description,Images")] Shoe shoe, List<IFormFile> Photos)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id != shoe.Id)
             {
                 return NotFound();
@@ -504,6 +531,11 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (!IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var shoe = await _context.Shoes.FindAsync(id);
             if (shoe != null)
             {

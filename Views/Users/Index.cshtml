@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Sneaky.Classes.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Users";
 }
 
 <div class="container">
@@ -18,7 +18,7 @@
                 <input type="submit" value="Create New" />
             </div>
         </form>
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>
@@ -34,24 +34,24 @@
                 </tr>
             </thead>
             <tbody>
-        @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Role)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Login)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Password)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-success">Edit</a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success">Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-success">Delete</a>
-                    </td>
-                </tr>
-        }
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Role)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Login)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

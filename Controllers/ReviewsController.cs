@@ -114,6 +114,11 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UserId,Comment,CreateCommentTime")] Review review)
         {
+            if (!IsUserLoggedIn())
+            {
+                return RedirectToAction("Login", "Users");
+            }
+
             if (ModelState.IsValid)
             {
                 review.CreateCommentTime = DateTime.Now;
@@ -142,7 +147,7 @@ namespace Sneaky.Controllers
             {
                 return RedirectToAction("Login", "Users");
             }
-            if (review.UserId != GetCurrentUserIdFromSession())
+            if (review.UserId != GetCurrentUserIdFromSession() && !IsAdminRole())
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -156,6 +161,15 @@ namespace Sneaky.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,Comment,CreateCommentTime")] Review review)
         {
+            if (!IsUserLoggedIn())
+            {
+                return RedirectToAction("Login", "Users");
+            }
+            if (review.UserId != GetCurrentUserIdFromSession() && !IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (id != review.Id)
             {
                 return NotFound();
@@ -206,7 +220,7 @@ namespace Sneaky.Controllers
             {
                 return RedirectToAction("Login", "Users");
             }
-            if (review.UserId != GetCurrentUserIdFromSession())
+            if (review.UserId != GetCurrentUserIdFromSession() && !IsAdminRole())
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -223,6 +237,15 @@ namespace Sneaky.Controllers
             if (review != null)
             {
                 _context.Reviews.Remove(review);
+            }
+
+            if (!IsUserLoggedIn())
+            {
+                return RedirectToAction("Login", "Users");
+            }
+            if (review!.UserId != GetCurrentUserIdFromSession() && !IsAdminRole())
+            {
+                return RedirectToAction("Index", "Home");
             }
 
             await _context.SaveChangesAsync();

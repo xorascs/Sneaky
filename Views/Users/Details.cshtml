@@ -4,99 +4,132 @@
     ViewData["Title"] = "Details";
 }
 
+<style>
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .card-footer {
+        background-color: #f8f9fa;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: 1rem;
+    }
+</style>
+
 <div class="container">
     <div class="wrapper animate__animated animate__fadeInUp">
-        <div class="title"><span>Details @Model.Login</span></div>
-        <dl class="row px-5 pt-5">
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Role)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Role)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Login)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Login)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Password)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Password)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Comparison)
-            </dt>
-            <dd class = "col-sm-10">
-                @if (Model.Comparison != null && Model.Comparison!.Shoes != null && Model.Comparison.Shoes.Count > 0)
-                {
-                    <div class="card m-2 p-2">
-                        <div class="row row-cols-lg-2">
+        @if (ViewBag.Login == Model.Login)
+        {
+            <div class="title"><span>Your Profile</span></div>
+        }
+        else
+        {
+            <div class="title"><span>@Model.Login's Profile</span></div>
+        }
+        <div class="animate__animated animate__zoomIn animate__delay-1s">
+            <dl class="row px-5 pt-5">
+                <dt class="col-sm-2">
+                    Role
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Role)
+                </dd>
+                <dt class="col-sm-2">
+                    Login
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Login)
+                </dd>
+                <dt class="col-sm-2">
+                    Comparison
+                </dt>
+                <dd class="col-sm-10">
+                    @if (Model.Comparison != null && Model.Comparison.Shoes != null && Model.Comparison.Shoes.Count > 0)
+                    {
+                        <div class="row mt-3">
                             @foreach (var shoe in Model.Comparison.Shoes)
                             {
-                                var FirstImage = shoe.Images.First();
-                                <div class="card p-2 m-2">
-                                    <div class="card-header">
-                                        <img src="~/shoesPhotos/@FirstImage" class="card-img-top" />
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span>@shoe.Brand?.Name @shoe.Name</span>
-                                        @if (ViewBag.Id == Model.Id)
-                                        {
-                                            <a asp-controller="Shoes" asp-action="RemoveFromComparison" asp-route-shoeId="@shoe.Id" class="btn btn-danger">Remove</a>
-                                        }
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <img src="@Url.Content("~/shoesPhotos/" + shoe.Images.FirstOrDefault())" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a class="text-decoration-none text-dark" asp-action="Details" asp-controller="Shoes" asp-route-id="@shoe.Id"><h5 class="card-title">@Html.DisplayFor(modelItem => shoe.Brand!.Name) @Html.DisplayFor(modelItem => shoe.Name)</h5></a>
+                                        </div>
+                                        <div class="card-footer">
+                                            @if (ViewBag.Id == Model.Id)
+                                            {
+                                                <a asp-controller="Shoes" asp-action="RemoveFromComparison" asp-route-shoeId="@shoe.Id" class="btn btn-danger">Remove</a>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             }
                         </div>
-                    </div>
-                }
-                else
-                {
-                    <div>No comparisons found.</div>
-                }
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Favourite)
-            </dt>
-            <dd class="col-sm-10">
-                @if (Model.Favourite != null && Model.Favourite!.Shoes != null && Model.Favourite.Shoes.Count > 0)
-                {
-                    <div class="card m-2 p-2">
-                        @foreach (var shoe in Model.Favourite.Shoes)
-                        {
-                            <div class="card p-2 m-2">
-                                <div class="card-img-top">
-                                    @foreach (var image in shoe.Images)
-                                    {
-                                        <img src="~/shoesPhotos/@image" class="shoe-img"/>
-                                    }
+                    }
+                    else
+                    {
+                        <div>No comparisons found.</div>
+                    }
+                </dd>
+                <dt class="col-sm-2">
+                    Favourite
+                </dt>
+                <dd class="col-sm-10">
+                    @if (Model.Favourite != null && Model.Favourite.Shoes != null && Model.Favourite.Shoes.Count > 0)
+                    {
+                        <div class="row mt-3">
+                            @foreach (var shoe in Model.Favourite.Shoes)
+                            {
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <img src="@Url.Content("~/shoesPhotos/" + shoe.Images.FirstOrDefault())" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a class="text-decoration-none text-dark" asp-action="Details" asp-controller="Shoes" asp-route-id="@shoe.Id"><h5 class="card-title">@Html.DisplayFor(modelItem => shoe.Brand!.Name) @Html.DisplayFor(modelItem => shoe.Name)</h5></a>
+                                        </div>
+                                        <div class="card-footer">
+                                            @if (ViewBag.Id == Model.Id)
+                                            {
+                                                <a asp-controller="Shoes" asp-action="RemoveFromFavourites" asp-route-shoeId="@shoe.Id" class="btn btn-danger">Remove</a>
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span>@shoe.Brand?.Name @shoe.Name</span>
-                                    @if (ViewBag.Id == Model.Id)
-                                    {
-                                        <a asp-controller="Shoes" asp-action="RemoveFromFavourites" asp-route-shoeId="@shoe.Id" class="btn btn-danger">Remove</a>
-                                    }
-                                </div>
-                            </div>
-                        }
-                    </div>
-                }
-                else
-                {
-                    <div>No favourites found.</div>
-                }
-            </dd>
-        </dl>
-        <form asp-action="Edit">
-            <input type="hidden" asp-for="Id" />
-            <div class="row button">
-                <input type="submit" value="Edit" class="btn w-25" />
-                <a asp-action="Index" class="btn outline-button w-25">Back to List</a>
-            </div>
-        </form>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div>No favourites found.</div>
+                    }
+                </dd>
+            </dl>
+            <form>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">Delete</a>
+            </form>
+        </div>
     </div>
 </div>

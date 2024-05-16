@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Sneaky.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\Shoes.jpg",
+      "PackagePath": "staticwebassets\\Shoes.jpg"
+    },
+    {
       "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -245,24 +249,52 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\13545262-229c-4722-ab0a-042711eecb95_Screenshot (1).png",
-      "PackagePath": "staticwebassets\\shoesPhotos\\13545262-229c-4722-ab0a-042711eecb95_Screenshot (1).png"
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\041da876-5c24-4409-8320-c75c2dd045c7_Screenshot 2024-03-28 172023.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\041da876-5c24-4409-8320-c75c2dd045c7_Screenshot 2024-03-28 172023.png"
     },
     {
-      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\2587eb6f-2395-4f93-a661-ed3d38e393c7_Screenshot (1).png",
-      "PackagePath": "staticwebassets\\shoesPhotos\\2587eb6f-2395-4f93-a661-ed3d38e393c7_Screenshot (1).png"
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\338a6b81-479f-436d-8360-86d343a80264_Screenshot 2024-03-28 172040.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\338a6b81-479f-436d-8360-86d343a80264_Screenshot 2024-03-28 172040.png"
     },
     {
-      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\4ed217ae-0fae-4c55-8317-f056928aa260_Screenshot (1).png",
-      "PackagePath": "staticwebassets\\shoesPhotos\\4ed217ae-0fae-4c55-8317-f056928aa260_Screenshot (1).png"
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\57bd23b0-dbed-492b-94ac-5686ac38b5fa_Screenshot 2024-03-28 172023.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\57bd23b0-dbed-492b-94ac-5686ac38b5fa_Screenshot 2024-03-28 172023.png"
     },
     {
-      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\6432a33e-d8d8-48f6-83aa-27baa2dc22bb_Screenshot 2024-04-03 144827.png",
-      "PackagePath": "staticwebassets\\shoesPhotos\\6432a33e-d8d8-48f6-83aa-27baa2dc22bb_Screenshot 2024-04-03 144827.png"
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\590b1117-33be-4920-8c5c-ef95b2247719_Screenshot 2024-04-02 160153.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\590b1117-33be-4920-8c5c-ef95b2247719_Screenshot 2024-04-02 160153.png"
     },
     {
-      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\ffdc1433-3c3b-4637-a700-5c6fb2994c36_Screenshot 2024-04-03 144827.png",
-      "PackagePath": "staticwebassets\\shoesPhotos\\ffdc1433-3c3b-4637-a700-5c6fb2994c36_Screenshot 2024-04-03 144827.png"
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\5f104d02-80b4-4c74-9b51-c27ec5e25723_Screenshot 2024-03-28 172108.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\5f104d02-80b4-4c74-9b51-c27ec5e25723_Screenshot 2024-03-28 172108.png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\647df7ac-b106-4f9f-a175-e072f2c439a5_Screenshot (1).png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\647df7ac-b106-4f9f-a175-e072f2c439a5_Screenshot (1).png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\6bcec922-64dd-4d79-a2cd-897d3526792a_Screenshot 2024-03-28 172011.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\6bcec922-64dd-4d79-a2cd-897d3526792a_Screenshot 2024-03-28 172011.png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\6e6a1fbc-b995-4d23-b123-539c8fb6f3c2_Screenshot 2024-04-02 142550.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\6e6a1fbc-b995-4d23-b123-539c8fb6f3c2_Screenshot 2024-04-02 142550.png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\78850bc4-748e-4cb4-9be8-0eb541a4ddef_Screenshot (1).png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\78850bc4-748e-4cb4-9be8-0eb541a4ddef_Screenshot (1).png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\8516770d-546c-49cd-9840-8ba0adc60a64_Screenshot 2024-03-28 172827.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\8516770d-546c-49cd-9840-8ba0adc60a64_Screenshot 2024-03-28 172827.png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\a3b45e7b-4a88-4c54-91c9-9c8ade4e1816_Screenshot 2024-03-28 172011.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\a3b45e7b-4a88-4c54-91c9-9c8ade4e1816_Screenshot 2024-03-28 172011.png"
+    },
+    {
+      "Id": "C:\\Users\\owner\\source\\repos\\Sneaky\\wwwroot\\shoesPhotos\\e27c2846-2c79-44ec-98be-7ebd17c6f41b_Screenshot 2024-03-28 175012.png",
+      "PackagePath": "staticwebassets\\shoesPhotos\\e27c2846-2c79-44ec-98be-7ebd17c6f41b_Screenshot 2024-03-28 175012.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Sneaky.Microsoft.AspNetCore.StaticWebAssets.props",
