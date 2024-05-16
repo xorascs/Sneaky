@@ -39,14 +39,16 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <dl class="row px-5 pt-5">
-                    <dt class="col-sm-4">Brand:</dt>
-                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Brand!.Name)</dd>
-                    <dt class="col-sm-4">Name:</dt>
-                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
-                    <dt class="col-sm-4">Description:</dt>
-                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
-                </dl>
+                <div class="card border-0">
+                    <dl class="row px-5 pt-5">
+                        <dt class="col-sm-4">Brand:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Brand!.Name)</dd>
+                        <dt class="col-sm-4">Name:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+                        <dt class="col-sm-4">Description:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+                    </dl>
+                </div>
                 <form>
                     <div class="row button justify-content-between">
                         @if (ViewBag.Role == "Admin")

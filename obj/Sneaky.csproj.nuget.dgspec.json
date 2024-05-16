@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owner\\source\\repos\\Sneaky\\Sneaky.csproj": {}
+    "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owner\\source\\repos\\Sneaky\\Sneaky.csproj": {
+    "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owner\\source\\repos\\Sneaky\\Sneaky.csproj",
+        "projectUniqueName": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj",
         "projectName": "Sneaky",
-        "projectPath": "C:\\Users\\owner\\source\\repos\\Sneaky\\Sneaky.csproj",
+        "projectPath": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\Sneaky.csproj",
         "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\owner\\Source\\Repos\\Sneaky\\obj\\",
         "projectStyle": "PackageReference",
